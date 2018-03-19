@@ -1,0 +1,57 @@
+Create a restful service with these end-points and responses :
+ 
+[PUT : /api/user/add]
+request body :
+{
+    "username" : "user_name",
+    "phone" : "phone",
+    "password" : "user_password"
+}
+ 
+[GET : /api/users]
+response body :
+{
+    "users" : [
+        {
+            "id": "user_id",
+            "phone": "phone"
+        }
+    ]
+}
+  
+[POST : /api/user/login]
+request body :
+{
+    "username" : "username",
+    "password" : "user_password"
+}
+ 
+response body :
+{
+    "id" : "id",
+    "token" : "session_token"
+}
+ 
+ [POST : /api/user/logout/{id}]
+{
+    "token" : "session_token"
+}
+ 
+Create a web client that can make calls to your server.
+1. Allow users to submit their details containing a username, phone number and password.
+2. Add functionality that allows the user to login/logout.
+3. Create a view that contains a list of all the unique users that are registered.
+4. Create a view that contains a count or a list of users that have called login within the last 5 minutes.
+5. Restrict the functionality in 3. to authenticated users only.
+6. The list or number of users in 4. must update dynamically. When a 2nd user has started a session, the counter or list in 4. must increase.
+7. Expire the security token after 3 minutes if the user is inactive. When a user's token expires or is logged out, the counter or list in 4. must decrease.
+ 
+You may modify or add more end-points and properties to the sample request/response packets above if required.
+
+You may use any of your preferred technologies or libraries, but you MUST make use of:
+Git and Java as the core of your project, and an in-memory database for persistence.
+
+Ideally, a build script (Maven or Gradle) should be included, but is not compulsory.
+
+Please submit your source to a public SCM host and provide Global Kinetic with access details and documentation on how to run your project(s).
+NOTE: Prioritize quality over completing all the points in time.
